@@ -36,6 +36,7 @@ module FakeS3
       return if !s3_object
 
       @object_map[s3_object.name] = s3_object
+      @sorted_set.delete(s3_object)
       @sorted_set << s3_object
     end
 
